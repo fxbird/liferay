@@ -1,0 +1,77 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping default-lazy="false" auto-import="false">
+	<import class="cn.zoneco.openplatform.model.AttachmentInfo" />
+	<import class="cn.zoneco.openplatform.model.CallLog" />
+	<import class="cn.zoneco.openplatform.model.CheckStatus" />
+	<import class="cn.zoneco.openplatform.model.ServiceInfo" />
+	<import class="cn.zoneco.openplatform.model.ZEntity" />
+	<class name="cn.zoneco.openplatform.model.impl.AttachmentInfoImpl" table="t_attachment">
+		<cache usage="read-write" />
+		<id name="attachId" column="attach_id" type="long">
+			<generator class="assigned" />
+		</id>
+		<property name="oriName" type="com.liferay.portal.dao.orm.hibernate.StringType" column="ori_name" />
+		<property name="saveName" type="com.liferay.portal.dao.orm.hibernate.StringType" column="save_name" />
+		<property name="typeCode" type="com.liferay.portal.dao.orm.hibernate.StringType" column="type_code" />
+		<one-to-one name="attContentBlobModel" access="com.liferay.portal.dao.orm.hibernate.PrivatePropertyAccessor" class="cn.zoneco.openplatform.model.AttachmentInfoAttContentBlobModel" cascade="save-update" outer-join="false" constrained="true" />
+		<property name="extName" type="com.liferay.portal.dao.orm.hibernate.StringType" column="ext_name" />
+		<property name="createDate" type="org.hibernate.type.TimestampType" column="create_date" />
+		<property name="createBy" type="com.liferay.portal.dao.orm.hibernate.LongType" column="create_by" />
+	</class>
+	<class name="cn.zoneco.openplatform.model.AttachmentInfoAttContentBlobModel" table="t_attachment" lazy="true">
+		<id name="attachId" column="attach_id">
+			<generator class="foreign">
+				<param name="property">cn.zoneco.openplatform.model.impl.AttachmentInfoImpl</param>
+			</generator>
+		</id>
+		<property column="att_content" name="attContentBlob" type="blob" />
+	</class>
+	<class name="cn.zoneco.openplatform.model.impl.CallLogImpl" table="t_log">
+		<cache usage="read-write" />
+		<id name="logId" column="log_id" type="long">
+			<generator class="assigned" />
+		</id>
+		<property name="userName" type="com.liferay.portal.dao.orm.hibernate.StringType" column="user_name" />
+		<property name="resourceName" type="com.liferay.portal.dao.orm.hibernate.StringType" column="resource_name" />
+		<property name="startTime" type="org.hibernate.type.TimestampType" column="start_time" />
+		<property name="endTime" type="org.hibernate.type.TimestampType" column="end_time" />
+		<property name="logStatus" type="com.liferay.portal.dao.orm.hibernate.StringType" column="log_status" />
+		<property name="logMessage" type="com.liferay.portal.dao.orm.hibernate.StringType" column="log_message" />
+		<property name="userId" type="com.liferay.portal.dao.orm.hibernate.LongType" column="user_id" />
+		<property name="resourceId" type="com.liferay.portal.dao.orm.hibernate.LongType" column="resource_id" />
+		<property name="inMsg" type="com.liferay.portal.dao.orm.hibernate.StringType" column="in_msg" />
+		<property name="outMsg" type="com.liferay.portal.dao.orm.hibernate.StringType" column="out_msg" />
+	</class>
+	<class name="cn.zoneco.openplatform.model.impl.CheckStatusImpl" table="t_status">
+		<cache usage="read-write" />
+		<id name="statusId" column="status_id" type="long">
+			<generator class="assigned" />
+		</id>
+		<property name="statusName" type="com.liferay.portal.dao.orm.hibernate.StringType" column="status_name" />
+	</class>
+	<class name="cn.zoneco.openplatform.model.impl.ServiceInfoImpl" table="t_resource">
+		<cache usage="read-write" />
+		<id name="resourceId" column="resource_id" type="long">
+			<generator class="assigned" />
+		</id>
+		<property name="resourceName" type="com.liferay.portal.dao.orm.hibernate.StringType" column="resource_name" />
+		<property name="description" type="com.liferay.portal.dao.orm.hibernate.StringType" column="resource_description" />
+		<property name="logoAttId" type="com.liferay.portal.dao.orm.hibernate.LongType" column="logo_att_id" />
+		<property name="wsdlAttId" type="com.liferay.portal.dao.orm.hibernate.LongType" column="wsdl_att_id" />
+		<property name="statusId" type="com.liferay.portal.dao.orm.hibernate.IntegerType" column="status_id" />
+		<property name="applyDate" type="com.liferay.portal.dao.orm.hibernate.IntegerType" column="apply_date" />
+		<property name="createDate" type="org.hibernate.type.TimestampType" column="create_date" />
+		<property name="createBy" type="com.liferay.portal.dao.orm.hibernate.LongType" column="create_by" />
+		<property name="updateDate" type="org.hibernate.type.TimestampType" column="update_date" />
+		<property name="updateBy" type="com.liferay.portal.dao.orm.hibernate.LongType" column="update_by" />
+	</class>
+	<class name="cn.zoneco.openplatform.model.impl.ZEntityImpl" table="sl_ZEntity">
+		<cache usage="read-write" />
+		<id name="comId" type="long">
+			<generator class="assigned" />
+		</id>
+		<property name="comName" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+	</class>
+</hibernate-mapping>

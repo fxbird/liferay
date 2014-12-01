@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" default-destroy-method="destroy" default-init-method="afterPropertiesSet" xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+	<bean id="cn.zoneco.openplatform.service.AttachmentInfoLocalService" class="cn.zoneco.openplatform.service.impl.AttachmentInfoLocalServiceImpl" />
+	<bean id="cn.zoneco.openplatform.service.persistence.AttachmentInfoPersistence" class="cn.zoneco.openplatform.service.persistence.AttachmentInfoPersistenceImpl" parent="basePersistence" />
+	<bean id="cn.zoneco.openplatform.service.CallLogLocalService" class="cn.zoneco.openplatform.service.impl.CallLogLocalServiceImpl" />
+	<bean id="cn.zoneco.openplatform.service.persistence.CallLogPersistence" class="cn.zoneco.openplatform.service.persistence.CallLogPersistenceImpl" parent="basePersistence" />
+	<bean id="cn.zoneco.openplatform.service.CheckStatusLocalService" class="cn.zoneco.openplatform.service.impl.CheckStatusLocalServiceImpl" />
+	<bean id="cn.zoneco.openplatform.service.persistence.CheckStatusPersistence" class="cn.zoneco.openplatform.service.persistence.CheckStatusPersistenceImpl" parent="basePersistence" />
+	<bean id="cn.zoneco.openplatform.service.ServiceInfoLocalService" class="cn.zoneco.openplatform.service.impl.ServiceInfoLocalServiceImpl" />
+	<bean id="cn.zoneco.openplatform.service.persistence.ServiceInfoPersistence" class="cn.zoneco.openplatform.service.persistence.ServiceInfoPersistenceImpl" parent="basePersistence" />
+	<bean id="cn.zoneco.openplatform.service.ZEntityLocalService" class="cn.zoneco.openplatform.service.impl.ZEntityLocalServiceImpl" />
+	<bean id="cn.zoneco.openplatform.service.persistence.ZEntityPersistence" class="cn.zoneco.openplatform.service.persistence.ZEntityPersistenceImpl" parent="basePersistence">
+		<property name="dataSource" ref="no_data_source" />
+	</bean>
+	<bean id="cn.zoneco.openplatform.service.persistence.ZEntityFinder" class="cn.zoneco.openplatform.service.persistence.ZEntityFinderImpl" parent="basePersistence">
+		<property name="dataSource" ref="no_data_source" />
+	</bean>
+</beans>

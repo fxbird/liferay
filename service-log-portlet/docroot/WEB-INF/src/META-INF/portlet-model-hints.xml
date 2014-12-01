@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+
+<model-hints>
+	<model name="cn.zoneco.openplatform.model.AttachmentInfo">
+		<field name="attachId" type="long" />
+		<field name="oriName" type="String" />
+		<field name="saveName" type="String" />
+		<field name="typeCode" type="String" />
+		<field name="attContent" type="Blob" />
+		<field name="extName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="createBy" type="long" />
+	</model>
+	<model name="cn.zoneco.openplatform.model.CallLog">
+		<field name="logId" type="long" />
+		<field name="userName" type="String" />
+		<field name="resourceName" type="String" />
+		<field name="startTime" type="Date" />
+		<field name="endTime" type="Date" />
+		<field name="logStatus" type="String" />
+		<field name="logMessage" type="String" />
+		<field name="userId" type="long" />
+		<field name="resourceId" type="long" />
+		<field name="inMsg" type="String" />
+		<field name="outMsg" type="String" />
+	</model>
+	<model name="cn.zoneco.openplatform.model.CheckStatus">
+		<field name="statusId" type="long" />
+		<field name="statusName" type="String" />
+	</model>
+	<model name="cn.zoneco.openplatform.model.ServiceInfo">
+		<field name="resourceId" type="long" />
+		<field name="resourceName" type="String" />
+		<field name="description" type="String" />
+		<field name="logoAttId" type="long" />
+		<field name="wsdlAttId" type="long" />
+		<field name="statusId" type="int" />
+		<field name="applyDate" type="int" />
+		<field name="createDate" type="Date" />
+		<field name="createBy" type="long" />
+		<field name="updateDate" type="Date" />
+		<field name="updateBy" type="long" />
+	</model>
+	<model name="cn.zoneco.openplatform.model.ZEntity">
+		<field name="comId" type="long" />
+		<field name="comName" type="long" />
+	</model>
+</model-hints>

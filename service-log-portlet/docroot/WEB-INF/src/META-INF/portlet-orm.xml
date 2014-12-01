@@ -1,0 +1,169 @@
+<?xml version="1.0"?>
+
+<entity-mappings xmlns="http://java.sun.com/xml/ns/persistence/orm" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="1.0" xsi:schemaLocation="http://java.sun.com/xml/ns/persistence/orm http://java.sun.com/xml/ns/persistence/orm_1_0.xsd">
+	<persistence-unit-metadata>
+		<xml-mapping-metadata-complete/>
+		<persistence-unit-defaults>
+			<access>PROPERTY</access>
+		</persistence-unit-defaults>
+	</persistence-unit-metadata>
+	<mapped-superclass class="cn.zoneco.openplatform.model.impl.AttachmentInfoModelImpl">
+		<attributes>
+			<id name="attachId">
+				<column name="ATTACH_ID" />
+			</id>
+			<basic name="oriName">
+				<column name="ORI_NAME" />
+			</basic>
+			<basic name="saveName">
+				<column name="SAVE_NAME" />
+			</basic>
+			<basic name="typeCode">
+				<column name="TYPE_CODE" />
+			</basic>
+			<basic name="attContent">
+				<column name="ATT_CONTENT" />
+			</basic>
+			<basic name="extName">
+				<column name="EXT_NAME" />
+			</basic>
+			<basic name="createDate">
+				<column name="CREATE_DATE" />
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="createBy">
+				<column name="CREATE_BY" />
+			</basic>
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="cn.zoneco.openplatform.model.impl.CallLogModelImpl">
+		<attributes>
+			<id name="logId">
+				<column name="LOG_ID" />
+			</id>
+			<basic name="userName">
+				<column name="USER_NAME" />
+			</basic>
+			<basic name="resourceName">
+				<column name="RESOURCE_NAME" />
+			</basic>
+			<basic name="startTime">
+				<column name="START_TIME" />
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="endTime">
+				<column name="END_TIME" />
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="logStatus">
+				<column name="LOG_STATUS" />
+			</basic>
+			<basic name="logMessage">
+				<column name="LOG_MESSAGE" />
+			</basic>
+			<basic name="userId">
+				<column name="USER_ID" />
+			</basic>
+			<basic name="resourceId">
+				<column name="RESOURCE_ID" />
+			</basic>
+			<basic name="inMsg">
+				<column name="IN_MSG" />
+			</basic>
+			<basic name="outMsg">
+				<column name="OUT_MSG" />
+			</basic>
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+			<transient name="userUuid" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="cn.zoneco.openplatform.model.impl.CheckStatusModelImpl">
+		<attributes>
+			<id name="statusId">
+				<column name="STATUS_ID" />
+			</id>
+			<basic name="statusName">
+				<column name="STATUS_NAME" />
+			</basic>
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="cn.zoneco.openplatform.model.impl.ServiceInfoModelImpl">
+		<attributes>
+			<id name="resourceId">
+				<column name="RESOURCE_ID" />
+			</id>
+			<basic name="resourceName">
+				<column name="RESOURCE_NAME" />
+			</basic>
+			<basic name="description">
+				<column name="RESOURCE_DESCRIPTION" />
+			</basic>
+			<basic name="logoAttId">
+				<column name="LOGO_ATT_ID" />
+			</basic>
+			<basic name="wsdlAttId">
+				<column name="WSDL_ATT_ID" />
+			</basic>
+			<basic name="statusId">
+				<column name="STATUS_ID" />
+			</basic>
+			<basic name="applyDate">
+				<column name="APPLY_DATE" />
+			</basic>
+			<basic name="createDate">
+				<column name="CREATE_DATE" />
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="createBy">
+				<column name="CREATE_BY" />
+			</basic>
+			<basic name="updateDate">
+				<column name="UPDATE_DATE" />
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="updateBy">
+				<column name="UPDATE_BY" />
+			</basic>
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="cn.zoneco.openplatform.model.impl.ZEntityModelImpl">
+		<attributes>
+			<id name="comId" />
+			<basic name="comName" />
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+		</attributes>
+	</mapped-superclass>
+	<entity class="cn.zoneco.openplatform.model.impl.AttachmentInfoImpl" name="AttachmentInfo">
+		<table name="t_attachment" />
+		<attributes />
+	</entity>
+	<entity class="cn.zoneco.openplatform.model.impl.CallLogImpl" name="CallLog">
+		<table name="t_log" />
+		<attributes />
+	</entity>
+	<entity class="cn.zoneco.openplatform.model.impl.CheckStatusImpl" name="CheckStatus">
+		<table name="t_status" />
+		<attributes />
+	</entity>
+	<entity class="cn.zoneco.openplatform.model.impl.ServiceInfoImpl" name="ServiceInfo">
+		<table name="t_resource" />
+		<attributes />
+	</entity>
+	<entity class="cn.zoneco.openplatform.model.impl.ZEntityImpl" name="ZEntity">
+		<table name="sl_ZEntity" />
+		<attributes />
+	</entity>
+</entity-mappings>

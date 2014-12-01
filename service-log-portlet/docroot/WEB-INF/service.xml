@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE service-builder PUBLIC "-//Liferay//DTD Service Builder 6.2.0//EN" "http://www.liferay.com/dtd/liferay-service-builder_6_2_0.dtd">
+<service-builder package-path="cn.zoneco.openplatform">
+    <author>fxbird</author>
+    <namespace>sl</namespace>
+
+    <entity name="ServiceInfo" local-service="true" table="t_resource" remote-service="false">
+        <column name="resourceId" type="long"  primary="true" db-name="resource_id"/>
+        <column name="resourceName" type="String"  db-name="resource_name"/>
+        <column name="description" type="String"  db-name="resource_description"/>
+        <column name="logoAttId" type="long"  db-name="logo_att_id"/>
+        <column name="wsdlAttId" type="long"  db-name="wsdl_att_id"/>
+        <column name="statusId" type="int"  db-name="status_id"/>
+        <column name="applyDate" type="int"  db-name="apply_date"/>
+        <column name="createDate" type="Date"  db-name="create_date"/>
+        <column name="createBy" type="long"  db-name="create_by"/>
+        <column name="updateDate" type="Date"  db-name="update_date"/>
+        <column name="updateBy" type="long"  db-name="update_by"/>
+    </entity>
+
+    <entity name="CheckStatus" table="t_status" local-service="true" remote-service="false">
+        <column name="statusId" type="long" primary="true" db-name="status_id"/>
+        <column name="statusName" type="String" db-name="status_name"/>
+    </entity>
+
+    <entity name="CallLog" table="t_log" local-service="true" remote-service="false">
+        <column name="logId" type="long" db-name="log_id" primary="true"/>
+        <column name="userName" type="String" db-name="user_name"/>
+        <column name="resourceName" type="String" db-name="resource_name"/>
+        <column name="startTime" type="Date" db-name="start_time"/>
+        <column name="endTime" type="Date" db-name="end_time"/>
+        <column name="logStatus" type="String" db-name="log_status"/>
+        <column name="logMessage" type="String" db-name="log_message"/>
+        <column name="userId" type="long" db-name="user_id"/>
+        <column name="resourceId" type="long" db-name="resource_id"/>
+        <column name="inMsg" type="String" db-name="in_msg"/>
+        <column name="outMsg" type="String" db-name="out_msg"/>
+    </entity>
+
+    <entity name="AttachmentInfo" table="t_attachment" local-service="true" remote-service="false">
+        <column name="attachId" type="long" db-name="attach_id" primary="true"/>
+        <column name="oriName" type="String" db-name="ori_name" />
+        <column name="saveName" type="String" db-name="save_name" />
+        <column name="typeCode" type="String" db-name="type_code" />
+        <column name="attContent" type="Blob" db-name="att_content" />
+        <column name="extName" type="String" db-name="ext_name" />
+        <column name="createDate" type="Date" db-name="create_date" />
+        <column name="createBy" type="long" db-name="create_by" />
+    </entity>
+
+    <entity name="ZEntity" local-service="true" remote-service="false"
+            data-source="no_data_source">
+        <column name="comId" type="long" primary="true"/>
+        <column name="comName" type="long" />
+    </entity>
+
+</service-builder>

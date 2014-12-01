@@ -5,6 +5,7 @@
 <%@page import="java.io.File"%>
 <%@page import="java.io.FileInputStream"%>
 <%@ page import="cn.zoneco.openplatform.service.ServiceInfoLocalServiceUtil" %>
+<%@ page import="cn.zoneco.openplatform.Constant" %>
 <%@include file="init.jsp"%>
 
 <%@ page contentType="text/html; charset=UTF-8"%>
@@ -42,13 +43,13 @@
 		           <%
                     	//response.getOutputStream().write();
 		           	ServiceInfo serviceInfo =(ServiceInfo)pageContext.getAttribute("service");
+                    String imagePath= request.getContextPath()+"/images/no_picture.gif";
 		           	if (serviceInfo.getLogoAttId()>0){
-		           		
 		           		AttachmentInfo attachmentInfo=AttachmentInfoLocalServiceUtil.getAttachmentInfo(serviceInfo.getLogoAttId());
-                    %>
-                    	<%-- <img src="<%ImageUtil.showImage(attachmentInfo.getAttContent().getBinaryStream(), 
-                    			response.getOutputStream());%>" /> --%>
-                    <%} %>
+                        imagePath= Constant.FOLDER_SERVICE_LOGO+"/"+attachmentInfo.getOriName();
+
+                     }%>
+                    <img src="<%=imagePath%>" width="200" height="200"/>
                 </aui:col>
                 <aui:col width="70">
                     <aui:row>
@@ -63,7 +64,7 @@
 		
 		<liferay-ui:search-container-column-text name="操作">
 			<portlet:renderURL var="editUrl">
-				<portlet:param name="jspPage" value="/html/service-mgmt/add.jsp"/>
+				<portlet:param name="jspPage" value="/html/service-mgmt/edit.jsp"/>
 				<portlet:param name="resourceId" value="${service.resourceId }"/>
 			</portlet:renderURL>
             <liferay-portlet:actionURL var="deleteUrl" name="deleteService">

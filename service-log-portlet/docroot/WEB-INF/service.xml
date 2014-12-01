@@ -41,6 +41,7 @@
         <column name="attachId" type="long" db-name="attach_id" primary="true"/>
         <column name="oriName" type="String" db-name="ori_name" />
         <column name="saveName" type="String" db-name="save_name" />
+        <column name="fullPath" type="String" db-name="full_path" />
         <column name="typeCode" type="String" db-name="type_code" />
         <column name="attContent" type="Blob" db-name="att_content" />
         <column name="extName" type="String" db-name="ext_name" />
